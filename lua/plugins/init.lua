@@ -40,7 +40,9 @@ return require('packer').startup(function(use)
   use { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' }
 
   -- Search
-  -- Fuzzy Finder / Telescope | need 'ripgrep' | sudo apt install ripgrep
+  -- need:
+  --    'ripgrep' | sudo apt install ripgrep
+  -- Fuzzy Finder / Telescope
   use { 
     'nvim-telescope/telescope.nvim',
     tag = '0.1.0',
@@ -76,6 +78,10 @@ return require('packer').startup(function(use)
   -- Whichkey - bottom bar to show leader keymaps
   use 'folke/which-key.nvim'
   -- Terminal
+  -- need:
+  --    'ripgrep' | sudo apt install ripgrep
+  --    'ncdu' | brew install ncdu
+  --    'htop' | sudo apt install htop
   use 'akinsho/toggleterm.nvim'
 
   -- Tools
