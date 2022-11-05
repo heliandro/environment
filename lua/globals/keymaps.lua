@@ -1,5 +1,4 @@
 local opts = { noremap = true, silent = true }
-
 local term_opts = { silent = true }
 
 -- Shorten function name
@@ -18,23 +17,47 @@ vim.g.maplocalleader = " "
 --   term_mode = "t",
 --   command_mode = "c",
 
--- Normal --
--- Better window navigation
+-- Select all
+keymap('n', '<C-a>', 'gg<S-v>G', opts)
+
+-- Window navigation
 keymap("n", "<C-h>", "<C-w>h", opts)
 keymap("n", "<C-j>", "<C-w>j", opts)
 keymap("n", "<C-k>", "<C-w>k", opts)
 keymap("n", "<C-l>", "<C-w>l", opts)
+keymap("", "w<up>", "<C-w>k", opts)
+keymap("", "w<down>", "<C-w>j", opts)
+keymap("", "w<left>", "<C-w>h", opts)
+keymap("", "w<right>", "<C-w>l", opts)
 
 -- Buffer split
 -- <C-w>v for vertical split
 -- <C-w>h for horizontal split
 -- <C-w>c for close split buffer
 
--- Navigate buffers
+-- Navigate Buffers / Tabs
 keymap("n", "<S-l>", ":bnext<CR>", opts)
 keymap("n", "<S-h>", ":bprevious<CR>", opts)
 keymap("n", "<S-del>", ":Bdelete<CR>", opts)
+keymap("", "t<right>", ":bnext<CR>", opts)
+keymap("", "t<left>", ":bprevious<CR>", opts)
+keymap("", "t<del>", ":Bdelete<CR>", opts)
+keymap("", "tp", ":BufferLineTogglePin<CR>", opts)
 keymap("n", "<S-p>", ":BufferLineTogglePin<CR>", opts)
+
+-- New Tab
+keymap('n', '<S-n>', ':tabedit<CR>', opts)
+
+-- Split window
+keymap('n', 'ss', ':split<CR>', opts)
+keymap('n', 'sv', ':vsplit<CR>', opts)
+keymap('n', 'sc', ':close<CR>', opts)
+
+-- Resize window
+keymap('n', '<C-w><left>', '<C-w><', opts)
+keymap('n', '<C-w><right>', '<C-w>>', opts)
+keymap('n', '<C-w><up>', '<C-w>+', opts)
+keymap('n', '<C-w><down>', '<C-w>-', opts)
 
 -- Move text up and down
 keymap("n", "<A-j>", "<Esc>:m .+1<CR>==gi", opts)
@@ -43,6 +66,11 @@ keymap("n", "<A-k>", "<Esc>:m .-2<CR>==gi", opts)
 -- Insert --
 -- Press jk fast to enter
 keymap("i", "jk", "<ESC>", opts)
+
+-- Any mode to:
+-- ALT + I => Go to insert mode
+-- ALT + V => Go to visual mode
+-- ALT + N => Go to normal mode
 
 -- Visual --
 -- Stay in indent mode
@@ -61,24 +89,3 @@ keymap("x", "K", ":move '<-2<CR>gv-gv", opts)
 keymap("x", "<A-j>", ":move '>+1<CR>gv-gv", opts)
 keymap("x", "<A-k>", ":move '<-2<CR>gv-gv", opts)
 
--- Terminal --
--- Better terminal navigation
---keymap("t", "<C-h>", "<C-\\><C-N><C-w>h", term_opts)
---keymap("t", "<C-j>", "<C-\\><C-N><C-w>j", term_opts)
---keymap("t", "<C-k>", "<C-\\><C-N><C-w>k", term_opts)
---keymap("t", "<C-l>", "<C-\\><C-N><C-w>l", term_opts)
-
--- Leader Maps -- USING Which-key file 
--- Save file / buffer
---keymap("n", "<leader>s", ":w<CR>", opts)
--- Quit nvim
---keymap("n", "<leader>q", ":qa<CR>", opts)
--- Nvimtree
---keymap("n", "<leader>e", ":NvimTreeToggle<CR>", opts)
--- Telescope
---keymap('n', '<leader>ff', ':Telescope find_files<CR>', opts)
---keymap('n', '<leader>fg', ':Telescope live_grep<CR>', opts)
---keymap('n', '<leader>fb', ':Telescope buffers<CR>', opts)
---keymap('n', '<leader>fh', ':Telescope help_tags<CR>', opts)
--- Packer 
---keymap('n', '<leader>p', ':PackerSync<CR>', opts)

@@ -1,18 +1,22 @@
 -- Setup global configs
 require 'globals.options'
-require 'globals.remaps'
+require 'globals.keymaps'
 
 -- Load plugins
 require 'plugins'
-
--- Load plugins config
-require 'plugins.gruvbox'
-require 'plugins.autocomplete'
-require 'plugins.languages-servers'
-require 'plugins.nvim-treesitter'
+require 'plugins.tokyonight'
 require 'plugins.nvim-tree'
 require 'plugins.lualine'
 require 'plugins.bufferline'
 require 'plugins.toggleterm'
 require 'plugins.telescope'
 require 'plugins.which-key'
+require 'plugins.nvim-lspconfig'
+require 'plugins.lspsaga'
+require 'plugins.cmp'
+require 'plugins.nvim-treesitter'
+require 'plugins.nvim-autopairs'
+require 'plugins.prettier'
+require 'plugins.null-ls'
+require 'plugins.git'
+require 'plugins.mason'
