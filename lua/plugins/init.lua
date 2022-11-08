@@ -51,6 +51,7 @@ return require('packer').startup(function(use)
   use 'hrsh7th/cmp-path' -- nvim-cmp source for path
   use 'hrsh7th/cmp-cmdline' -- nvim-cmp source for cmdlines
   use 'hrsh7th/nvim-cmp' -- Completion
+  use { 'github/copilot.vim', branch = 'release' }
 
   -- Snippets
   use 'L3MON4D3/LuaSnip' -- snippets
