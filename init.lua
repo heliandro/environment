@@ -19,5 +19,5 @@ require 'plugins.nvim-autopairs'
 require 'plugins.prettier'
 require 'plugins.null-ls'
 require 'plugins.git'
-require 'plugins.mason'
+-- require 'plugins.mason' -- Disabled - High CPU and Memory usage
 require 'plugins.gitsigns'
