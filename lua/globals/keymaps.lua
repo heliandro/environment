@@ -44,6 +44,7 @@ keymap("", "t<left>", ":bprevious<CR>", opts)
 keymap("", "t<del>", ":Bdelete<CR>", opts)
 keymap("", "tp", ":BufferLineTogglePin<CR>", opts)
 keymap("n", "<S-p>", ":BufferLineTogglePin<CR>", opts)
+keymap("n", "<S-TAB>", ":bnext<CR>", opts)
 
 -- New Tab
 keymap('n', '<S-n>', ':tabedit<CR>', opts)
@@ -88,4 +89,3 @@ keymap("x", "J", ":move '>+1<CR>gv-gv", opts)
 keymap("x", "K", ":move '<-2<CR>gv-gv", opts)
 keymap("x", "<A-j>", ":move '>+1<CR>gv-gv", opts)
 keymap("x", "<A-k>", ":move '<-2<CR>gv-gv", opts)
-
