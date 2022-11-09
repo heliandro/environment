@@ -15,7 +15,7 @@ vim.opt.showcmd = true
 vim.opt.cmdheight = 1
 vim.opt.laststatus = 2
 vim.opt.expandtab = true
-vim.opt.scrolloff = 10
+vim.opt.scrolloff = 8
 vim.opt.inccommand = 'split'
 vim.opt.ignorecase = true
 vim.opt.smarttab = true
@@ -29,10 +29,10 @@ vim.opt.timeoutlen = 500 -- time to wait for a mapped sequel
 vim.opt.clipboard = 'unnamedplus' -- Unified with system clipboard
 vim.opt.backspace = 'start,eol,indent'
 vim.opt.path:append { '**' } -- Finding files -- Search down into subfolders
-vim.opt.wildignore:append { '*.pyc', '*/node_modules/*' } -- Ignore folders and files
+vim.opt.wildignore:append { '*.pyc', '/node_modules/*' } -- Ignore folders and files
 vim.o.splitbellow = true -- automatic h split going down
 vim.o.splitright = true -- automatic v split going right
-vim.o.colorcolumn = '80' -- Vertical column char at position 80 to indicates limit 80 char per line.
+--vim.o.colorcolumn = '80' -- Vertical column char at position 80 to indicates limit 80 char per line.
 --vim.o.signcolumn = 'yes'          -- Vertical column before line numbers
 
 -- Undercurl - mark errors with undercurl
